@@ -19,5 +19,21 @@ function agregarTweet(e){
 
     const tweet = document.getElementById('tweet').value;
 
-    console.log(tweet);
+    //creo un nuevo elemento que sera una lista
+    const li = document.createElement('li');
+    //le seteo el texto que ya se escribio en el textTarea
+    li.innerText = tweet;
+    //Se lo paso al elemento padre para poder visualizarlo
+    listTweets.appendChild(li);
+
+    //Creo un boton para borrar
+    const botonBorrar = document.createElement('a');
+    botonBorrar.classList = 'borrar-tweet';
+    botonBorrar.innerText = 'X';
+    // li será el elemento padre de este boton
+    li.appendChild(botonBorrar);
+
+    //una vez agregado a la lista limpio el textTarea
+    document.getElementById('tweet').value='';
+
 }
